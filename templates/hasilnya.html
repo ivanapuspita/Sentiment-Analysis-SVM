@@ -1,0 +1,87 @@
+{% extends "_layout.html" %}
+{% block content %}
+
+
+
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 align="center" class="page-header">Hasil Analisis Sentimen</h1>
+                         
+                            <table>
+                                <tr>
+                                    <td small style="font-weight: bold;">Text Awal</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ subject }}</td>
+                                </tr>   
+                                <tr>
+                                    <td small style="font-weight: bold;">Cleansing</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ cleansing }}</td>
+                                </tr>
+                                <tr>
+                                    <td small style="font-weight: bold;">Spelling Correction</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ slangword }}</td>
+                                </tr> 
+                                <tr>
+                                    <td small style="font-weight: bold;">Stopword Removal</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ stopword }}</td>
+                                </tr>   
+                                <tr>
+                                    <td small style="font-weight: bold;">Stemming</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ stemming }}</td>
+                                </tr>
+                                <tr>
+                                    <td small style="font-weight: bold;">Tokenizing</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ tokenize }}</td>
+                                </tr>
+                                <tr>
+                                    <td small style="font-weight: bold;">Text Final</td>
+                                    <td small style="font-weight: bold;">&ensp;:</td>
+                                    <td>&ensp;{{ text_final_ }}</td>
+                                </tr>                    
+                            </table>
+                            <br><h5 class="card-title">Hasil Klasifikasi Manual+SVM</h4><br>
+                            <table>                    
+                                <tr>
+                                  <td small style="font-weight: bold;">Label</td>
+                                  <td small style="font-weight: bold;">&ensp;:</td>
+                                  <td>&ensp;{{ hasil_kelas }}</td>
+                                </tr>
+                                
+                            </table>
+                            <br><h4 class="card-title">Hasil Klasifikasi TextBlob+SVM</h4><br>
+                            <table>                    
+                                <tr>
+                                  <td small style="font-weight: bold;">Label</td>
+                                  <td small style="font-weight: bold;">&ensp;:</td>
+                                  <td>&ensp;{{ hasil_kelas2 }}</td>
+                              </tr>
+                            </table>
+                            <br><h4 class="card-title">Hasil Klasifikasi VADER+SVM</h4><br>
+                            <table>                    
+                                <tr>
+                                  <td small style="font-weight: bold;">Label</td>
+                                  <td small style="font-weight: bold;">&ensp;:</td>
+                                  <td>&ensp;{{ hasil_kelas3 }}</td>
+                              </tr>
+                            </table>
+            
+
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            
+{% endblock %}
+        

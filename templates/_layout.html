@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Sentiment Analysis</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{{ url_for('static', filename='css/metisMenu.min.css') }}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='css/startmin.css') }}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/Chart.js') }}"></script>
+        {% block style %}
+        {% endblock %}
+
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Sentiment Analysis</a>
+                </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                
+
+               
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            
+                            
+                            <li>
+                                <a href="{{ url_for('index') }}"><i class="fa fa-home fa-fw"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Dataset<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{ url_for('label_1') }}">Label Manual</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('label_2') }}">Label TextBlob</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('label_3') }}">Label VADER</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Preprocessing <span class="fa arrow"></span></a>
+                                        <ul class="nav nav-third-level">
+                                            <li>
+                                                <a href="{{ url_for('cleansing') }}">Cleansing</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('spelling') }}">Spelling</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('stopword') }}">Stopword</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('stemming') }}">Stemming</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('tokenizing') }}">Tokenizing</a>
+                                            </li>
+                                            
+                                            
+                                        </ul>
+                                        
+                                        <!-- /.nav-third-level -->
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="{{ url_for('klasifikasi') }}"><i class="fa fa-edit fa-fw"></i> Klasifikasi</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('pengujian') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Pengujian</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+        {% block content %}
+        {% endblock %}
+        </div>
+     <!-- jQuery -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+     <!-- Bootstrap Core JavaScript -->
+     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+     <!-- Metis Menu Plugin JavaScript -->
+     <script src="{{ url_for('static', filename='js/metisMenu.min.js') }}"></script>
+
+     <!-- Custom Theme JavaScript -->
+     <script src="{{ url_for('static', filename='js/startmin.js') }}"></script>
+
+        {% block script %}
+        {% endblock %}
+
+    
+    </body>
+</html>
